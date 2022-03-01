@@ -16,7 +16,6 @@ docker run \
 	-v /tmp/runner-$1:/tmp/runner-$1 \
 	-v /tmp/github:/tmp/github \
 	--network cipher-net \
-	# TODO reaal image name
-	github-runner \
+	ghcr.io/socialgouv/actions-runner:master \
 	/ephemeral-runner.sh
 
