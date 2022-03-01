@@ -19,8 +19,8 @@ sudo docker pull ghcr.io/socialgouv/actions-runner:master
 Install `systemd` service:
 
 ```bash
-curl https://raw.githubusercontent.com/SocialGouv/actions-runner/master/github-runner%40.service
-mv github-runner@.service /etc/systemd/system/
+wget https://raw.githubusercontent.com/SocialGouv/actions-runner/master/github-runner%40.service
+sudo mv github-runner@.service /etc/systemd/system/
 chmod 644 /etc/systemd/system/github-runner@.service
 sudo systemctl daemon-reload
 ```
