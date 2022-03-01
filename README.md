@@ -56,6 +56,8 @@ mkdir /tmp/github
 
 ## Startup
 
+From there, this is what you need to do **each time** you have to start `micro-cipher`. This is because it generates a **new random key at each startup**, so you need to **encrypt the token** again and **restart the services**.
+
 Run `micro-cipher`:
 
 ```bash
