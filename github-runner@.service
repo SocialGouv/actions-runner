@@ -1,5 +1,5 @@
 [Unit]
-Description=Ephemeral Github Actions runner instance #%i
+Description=Ephemeral Github actions runner container launcher #%i
 After=docker.service
 Requires=docker.service
 
@@ -7,7 +7,7 @@ Requires=docker.service
 Type=simple
 TimeoutStartSec=0
 Restart=always
-ExecStart=/home/runner/runner.sh %i
+ExecStart=/usr/bin/runner.sh %i
 
 [Install]
 WantedBy=multi-user.target
