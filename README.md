@@ -44,7 +44,7 @@ docker network create cipher-net
 Pull `micro-cipher`:
 
 ```bash
-docker pull ghcr.io/socialgouv/micro-cipher:main
+sudo docker pull ghcr.io/socialgouv/micro-cipher:main
 ```
 
 Create the directory in which we'll store the encrypted Github token:
