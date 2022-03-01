@@ -4,7 +4,7 @@ ephemeral github runners in containers
 
 ## Concept
 
-You'll have one or more runners on a host system. **Each runner** is in a **Docker container** thanks to [this project](https://github.com/myoung34/docker-github-actions-runner). We will use *ephemeral mode* : when a runner/container is started, it connects Github and waits for a job to run. When it receives and finishes its first job, it will **deregister from github** and the **container is removed**. Then, a **systemd service** runs a new container to **replace it**.
+You'll have one or more runners on a host system. **Each runner** is in a **Docker container** thanks to [this project](https://github.com/myoung34/docker-github-actions-runner). We will use *ephemeral mode* : when a runner/container is started, it connects Github and waits for a job to run. When it receives and finishes its first job, it will **deregister from github** and the **container is removed**. Then, a **systemd service** runs a new container to **replace it**. This way the environment is clean for every job we run.
 
 To register Github runners dynamically, we need to use a Github PAT (personal access token). This token being **very sensitive**, we won't store it on the host's file system. Instead, we will store an encrypted version of token and use [SocialGouv/micro-cipher](https://github.com/SocialGouv/micro-cipher) to **decrypt it everytime** we need to start a new container.
 
