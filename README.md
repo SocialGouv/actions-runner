@@ -19,7 +19,7 @@ sudo docker pull ghcr.io/socialgouv/actions-runner:master
 Clone this repository in the user's home:
 
 ```bash
-cd $HOME && git clone git@github.com:SocialGouv/actions-runner.git
+cd $HOME && git clone https://github.com/SocialGouv/actions-runner.git
 ```
 
 Copy the `runner.sh` script into `/usr/bin/`, preserving ownership:
