@@ -14,7 +14,6 @@ RUN sudo install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl
 # Install yq
 RUN wget https://github.com/mikefarah/yq/releases/download/v4.20.2/yq_linux_amd64.tar.gz -O - | tar xz && sudo mv yq_linux_amd64 /usr/bin/yq
 
-COPY entrypoint-decipher.sh github-token.enc /
+COPY entrypoint-decipher.sh /
 RUN chmod +x /entrypoint-decipher.sh
 ENTRYPOINT ["/entrypoint-decipher.sh"]
-

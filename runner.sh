@@ -14,7 +14,9 @@ docker run \
 	-e EPHEMERAL=true \
 	-v /var/run/docker.sock:/var/run/docker.sock \
 	-v /tmp/runner-$1:/tmp/runner-$1 \
+	-v /tmp/github:/tmp/github \
 	--network cipher-net \
+	# TODO reaal image name
 	github-runner \
 	/ephemeral-runner.sh
 
