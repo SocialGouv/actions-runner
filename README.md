@@ -58,7 +58,7 @@ mkdir /tmp/github
 Run `micro-cipher`:
 
 ```bash
-docker run -d --name micro-cipher --network cipher-net ghcr.io/socialgouv/micro-cipher
+docker run -d --name micro-cipher --network cipher-net ghcr.io/socialgouv/micro-cipher:main
 ```
 
 By running `docker logs micro-cipher` you should get the public key and a command hint to encrypt the token. Put the key in an `id_rsa.pem.pub` file and encrypt the key by running:
