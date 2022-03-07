@@ -53,12 +53,12 @@ Run `micro-cipher`:
 docker run -d --name micro-cipher --network cipher-net ghcr.io/socialgouv/micro-cipher:main
 ```
 
-By running `docker logs micro-cipher` you should get the public key and a command hint to encrypt the token. Put the key in an `id_rsa.pem.pub` file and encrypt the key by running:
+By running `docker logs micro-cipher` you should get the generated public key. Put the key in an `id_rsa.pem.pub` file and encrypt the key by running this command, entering the token in the prompt and pressing Ctrl+d (maybe twice):
 
 ```bash
- echo "<token>" | openssl rsautl -encrypt -oaep -pubin -inkey id_rsa.pem.pub -out /tmp/github/github-token.enc
+openssl rsautl -encrypt -oaep -pubin -inkey id_rsa.pem.pub -out /tmp/github/github-token.enc
 ```
-**Be careful to keep the whitespace at the beginning of the command to keep the token out of the bash history.**
+**This allows you to keep the token out of the bash history.**
 
 Start some runner services:
 
