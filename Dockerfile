@@ -32,8 +32,8 @@ RUN . $NVM_DIR/nvm.sh && \
     nvm alias default $NODE_VERSION && \
     nvm use default && \
     npm i -g yarn
-ENV NODE_PATH $NVM_DIR/v$NODE_VERSION/lib/node_modules
-ENV PATH      $NVM_DIR/v$NODE_VERSION/bin:$PATH
+ENV NODE_PATH $NVM_DIR/$NODE_VERSION/lib/node_modules
+ENV PATH      $NVM_DIR/$NODE_VERSION/bin:$PATH
 
 COPY runner-entrypoint.sh /
 RUN chmod +x /runner-entrypoint.sh
