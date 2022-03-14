@@ -5,7 +5,8 @@ ARG NVM_VERSION=v0.39.1
 
 ### INSTALL DEPENDENCIES ###
 # Kubectl
-RUN sudo wget -P /usr/local/bin/ https://dl.k8s.io/release/v1.23.4/bin/linux/amd64/kubectl
+RUN sudo wget -P /tmp/ https://dl.k8s.io/release/v1.23.4/bin/linux/amd64/kubectl
+RUN sudo install -o root -g root -m 0755 /tmp/kubectl /usr/local/bin/kubectl
 
 # yq
 RUN curl -sL https://github.com/mikefarah/yq/releases/download/v4.20.2/yq_linux_amd64.tar.gz | tar xz -C /tmp/
