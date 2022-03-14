@@ -19,7 +19,7 @@ RUN tar xvzf /tmp/helm-v3.7.2-linux-amd64.tar.gz -C /tmp/
 RUN sudo mv /tmp/linux-amd64/helm /usr/local/bin/helm
 
 # Kustomize
-RUN curl -s "https://raw.githubusercontent.com/kubernetes-sigs/kustomize/master/hack/install_kustomize.sh" | sudo -E bash -
+RUN curl -s "https://raw.githubusercontent.com/kubernetes-sigs/kustomize/master/hack/install_kustomize.sh" | sudo bash
 
 # NodeJs
 ENV NVM_VERSION=$NVM_VERSION
