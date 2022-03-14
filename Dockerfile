@@ -9,15 +9,15 @@ RUN sudo wget -P /usr/local/bin/ https://dl.k8s.io/release/v1.23.4/bin/linux/amd
 
 # yq
 RUN curl -sL https://github.com/mikefarah/yq/releases/download/v4.20.2/yq_linux_amd64.tar.gz | tar xz -C /tmp/
-RUN sudo mv /tmp/yq_linux_amd64 /usr/local/bin/yq
+RUN sudo install -o root -g root -m 0755 /tmp/yq_linux_amd64 /usr/local/bin/yq
 
 # Helm
 RUN curl -sL https://get.helm.sh/helm-v3.7.2-linux-amd64.tar.gz | tar xz -C /tmp/
-RUN sudo mv /tmp/linux-amd64/helm /usr/local/bin/
+RUN sudo install -o root -g root -m 0755 /tmp/linux-amd64/helm /usr/local/bin/helm
 
 # Kustomize
 RUN curl -sL https://github.com/kubernetes-sigs/kustomize/releases/download/kustomize%2Fv4.5.2/kustomize_v4.5.2_linux_amd64.tar.gz | tar xz -C /tmp/
-RUN sudo mv /tmp/kustomize /usr/local/bin/
+RUN sudo install -o root -g root -m 0755 /tmp/kustomize /usr/local/bin/kustomize
 
 # NodeJs
 ENV NVM_VERSION=$NVM_VERSION
