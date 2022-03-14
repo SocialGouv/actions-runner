@@ -39,3 +39,5 @@ ENV PATH      $NVM_DIR/$NODE_VERSION/bin:$PATH
 COPY nvm-entrypoint.sh /
 RUN sudo chmod +x /nvm-entrypoint.sh
 ENTRYPOINT ["/nvm-entrypoint.sh"]
+
+CMD ["startup.sh"]
