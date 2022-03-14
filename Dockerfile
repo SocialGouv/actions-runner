@@ -1,14 +1,9 @@
 FROM summerwind/actions-runner-dind:latest
 
+ARG NODE_VERSION=v16
+ARG NVM_VERSION=v0.39.1
+
 ### INSTALL DEPENDENCIES ###
-
-# Node.js v16
-RUN wget -qO- https://deb.nodesource.com/setup_16.x | sudo -E bash -
-RUN sudo apt install nodejs
-
-# Yarn
-RUN sudo npm install -g yarn
-
 # Kubectl
 RUN wget -P /tmp/ "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
 RUN sudo install -o root -g root -m 0755 /tmp/kubectl /usr/local/bin/kubectl
@@ -25,3 +20,22 @@ RUN sudo mv /tmp/linux-amd64/helm /usr/local/bin/helm
 
 # Kustomize
 RUN curl -s "https://raw.githubusercontent.com/kubernetes-sigs/kustomize/master/hack/install_kustomize.sh" | sudo -E bash -
+
+# NodeJs
+ENV NVM_VERSION=$NVM_VERSION
+ENV NVM_DIR=$HOME/.nvm
+RUN mkdir -p $NVM_DIR
+RUN curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/$NVM_VERSION/install.sh | bash
+ENV NODE_VERSION=$NODE_VERSION
+RUN chmod +x $NVM_DIR/nvm.sh && sudo ln -s $NVM_DIR/nvm.sh /usr/local/bin/nvm
+RUN . $NVM_DIR/nvm.sh && \
+    nvm install $NODE_VERSION && \
+    nvm alias default $NODE_VERSION && \
+    nvm use default && \
+    npm i -g yarn
+ENV NODE_PATH $NVM_DIR/$NODE_VERSION/lib/node_modules
+ENV PATH      $NVM_DIR/$NODE_VERSION/bin:$PATH
+
+COPY entrypoint.sh /
+RUN sudo chmod +x /entrypoint.sh
+ENTRYPOINT ["/entrypoint.sh"]
