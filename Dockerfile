@@ -1,4 +1,4 @@
-FROM myoung34/github-runner:latest
+FROM summerwind/actions-runner:latest
 
 ### INSTALL DEPENDENCIES ###
 
@@ -23,7 +23,3 @@ RUN mv linux-amd64/helm /usr/local/bin/helm
 
 # Kustomize
 RUN curl -s "https://raw.githubusercontent.com/kubernetes-sigs/kustomize/master/hack/install_kustomize.sh"  | bash
-
-COPY entrypoint-decipher.sh /
-RUN chmod +x /entrypoint-decipher.sh
-ENTRYPOINT ["/entrypoint-decipher.sh"]
