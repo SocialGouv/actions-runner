@@ -1,4 +1,4 @@
-FROM summerwind/actions-runner:latest
+FROM summerwind/actions-runner-dind:latest
 
 ### INSTALL DEPENDENCIES ###
 
