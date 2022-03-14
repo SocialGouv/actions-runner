@@ -36,6 +36,6 @@ RUN . $NVM_DIR/nvm.sh && \
 ENV NODE_PATH $NVM_DIR/$NODE_VERSION/lib/node_modules
 ENV PATH      $NVM_DIR/$NODE_VERSION/bin:$PATH
 
-COPY entrypoint.sh /
-RUN sudo chmod +x /entrypoint.sh
-ENTRYPOINT ["/entrypoint.sh"]
+COPY nvm-entrypoint.sh /
+RUN sudo chmod +x /nvm-entrypoint.sh
+ENTRYPOINT ["/nvm-entrypoint.sh"]
