@@ -27,8 +27,7 @@ ENV NVM_DIR=$HOME/.nvm
 RUN mkdir -p $NVM_DIR
 RUN curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/$NVM_VERSION/install.sh | bash
 ENV NODE_VERSION=$NODE_VERSION
-RUN chmod +x $NVM_DIR/nvm.sh && \
-  ln -s $NVM_DIR/nvm.sh /usr/local/bin/nvm
+RUN chmod +x $NVM_DIR/nvm.sh && sudo ln -s $NVM_DIR/nvm.sh /usr/local/bin/nvm
 RUN . $NVM_DIR/nvm.sh && \
     nvm install $NODE_VERSION && \
     nvm alias default $NODE_VERSION && \
@@ -36,3 +35,7 @@ RUN . $NVM_DIR/nvm.sh && \
     npm i -g yarn
 ENV NODE_PATH $NVM_DIR/$NODE_VERSION/lib/node_modules
 ENV PATH      $NVM_DIR/$NODE_VERSION/bin:$PATH
+
+COPY entrypoint.sh /
+RUN sudo chmod +x /entrypoint.sh
+ENTRYPOINT ["/entrypoint.sh"]
