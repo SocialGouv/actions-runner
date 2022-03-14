@@ -5,22 +5,18 @@ ARG NVM_VERSION=v0.39.1
 
 ### INSTALL DEPENDENCIES ###
 # Kubectl
-RUN wget -P /tmp/ https://dl.k8s.io/release/v1.23.4/bin/linux/amd64/kubectl
-RUN sudo mv /tmp/kubectl /usr/local/bin/
+RUN sudo wget -P /usr/local/bin/ https://dl.k8s.io/release/v1.23.4/bin/linux/amd64/kubectl
 
 # yq
-RUN wget -P /tmp/ https://github.com/mikefarah/yq/releases/download/v4.20.2/yq_linux_amd64.tar.gz
-RUN tar xvzf /tmp/yq_linux_amd64.tar.gz -C /tmp/
+RUN curl -sL https://github.com/mikefarah/yq/releases/download/v4.20.2/yq_linux_amd64.tar.gz | tar xz -C /tmp/
 RUN sudo mv /tmp/yq_linux_amd64 /usr/local/bin/yq
 
 # Helm
-RUN wget https://get.helm.sh/helm-v3.7.2-linux-amd64.tar.gz -P /tmp/
-RUN tar xvzf /tmp/helm-v3.7.2-linux-amd64.tar.gz -C /tmp/
+RUN curl -sL https://get.helm.sh/helm-v3.7.2-linux-amd64.tar.gz | tar xz -C /tmp/
 RUN sudo mv /tmp/linux-amd64/helm /usr/local/bin/
 
 # Kustomize
-RUN wget -P /tmp/ https://github.com/kubernetes-sigs/kustomize/releases/download/kustomize%2Fv4.5.2/kustomize_v4.5.2_linux_amd64.tar.gz
-RUN tar xvzf /tmp/kustomize_v4.5.2_linux_amd64.tar.gz -C /tmp/
+RUN curl -sL https://github.com/kubernetes-sigs/kustomize/releases/download/kustomize%2Fv4.5.2/kustomize_v4.5.2_linux_amd64.tar.gz | tar xz -C /tmp/
 RUN sudo mv /tmp/kustomize /usr/local/bin/
 
 # NodeJs
