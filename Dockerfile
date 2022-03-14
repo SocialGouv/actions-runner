@@ -21,7 +21,7 @@ RUN sudo mv /tmp/yq_linux_amd64 /usr/bin/yq
 # Helm
 RUN wget https://get.helm.sh/helm-v3.7.2-linux-amd64.tar.gz -P /tmp/
 RUN tar xvzf /tmp/helm-v3.7.2-linux-amd64.tar.gz -C /tmp/
-RUN mv /tmp/linux-amd64/helm /usr/local/bin/helm
+RUN sudo mv /tmp/linux-amd64/helm /usr/local/bin/helm
 
 # Kustomize
-RUN curl -s "https://raw.githubusercontent.com/kubernetes-sigs/kustomize/master/hack/install_kustomize.sh"  | bash
+RUN curl -s "https://raw.githubusercontent.com/kubernetes-sigs/kustomize/master/hack/install_kustomize.sh" | sudo -E bash -
