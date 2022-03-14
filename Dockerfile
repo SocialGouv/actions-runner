@@ -15,7 +15,7 @@ RUN sudo install -o root -g root -m 0755 /tmp/kubectl /usr/local/bin/kubectl
 
 # yq
 RUN wget -P /tmp/ https://github.com/mikefarah/yq/releases/download/v4.20.2/yq_linux_amd64.tar.gz
-RUN tar xz /tmp/yq_linux_amd64.tar.gz -C /tmp/
+RUN tar xvzf /tmp/yq_linux_amd64.tar.gz -C /tmp/
 RUN sudo mv /tmp/yq_linux_amd64 /usr/bin/yq
 
 # Helm
