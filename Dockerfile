@@ -10,17 +10,18 @@ RUN sudo apt install nodejs
 RUN sudo npm install -g yarn
 
 # Kubectl
-RUN sudo curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
-RUN sudo install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl
-RUN sudo rm kubectl
+RUN wget -P /tmp/ "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
+RUN sudo install -o root -g root -m 0755 /tmp/kubectl /usr/local/bin/kubectl
 
 # yq
-RUN wget https://github.com/mikefarah/yq/releases/download/v4.20.2/yq_linux_amd64.tar.gz -O - | sudo tar xz && sudo mv yq_linux_amd64 /usr/bin/yq
+RUN wget -P /tmp/ https://github.com/mikefarah/yq/releases/download/v4.20.2/yq_linux_amd64.tar.gz
+RUN tar -C /tmp xz yq_linux_amd64.tar.gz
+RUN sudo mv /tmp/yq_linux_amd64 /usr/bin/yq
 
 # Helm
-RUN wget https://get.helm.sh/helm-v3.7.2-linux-amd64.tar.gz
-RUN tar xvzf helm-v3.7.2-linux-amd64.tar.gz
-RUN mv linux-amd64/helm /usr/local/bin/helm
+RUN wget https://get.helm.sh/helm-v3.7.2-linux-amd64.tar.gz -P /tmp/
+RUN tar -C /tmp xvzf helm-v3.7.2-linux-amd64.tar.gz
+RUN mv /tmp/linux-amd64/helm /usr/local/bin/helm
 
 # Kustomize
 RUN curl -s "https://raw.githubusercontent.com/kubernetes-sigs/kustomize/master/hack/install_kustomize.sh"  | bash
