@@ -5,20 +5,24 @@ ARG NVM_VERSION=v0.39.1
 
 ### INSTALL DEPENDENCIES ###
 # Kubectl
-RUN sudo wget -P /tmp/ https://dl.k8s.io/release/v1.23.4/bin/linux/amd64/kubectl
+RUN curl -sL https://dl.k8s.io/release/v1.23.4/bin/linux/amd64/kubectl > /tmp/kubectl
 RUN sudo install -o root -g root -m 0755 /tmp/kubectl /usr/local/bin/kubectl
+RUN rm /tmp/kubectl
 
 # yq
 RUN curl -sL https://github.com/mikefarah/yq/releases/download/v4.20.2/yq_linux_amd64.tar.gz | tar xz -C /tmp/
 RUN sudo install -o root -g root -m 0755 /tmp/yq_linux_amd64 /usr/local/bin/yq
+RUN rm /tmp/yq_linux_amd64
 
 # Helm
 RUN curl -sL https://get.helm.sh/helm-v3.7.2-linux-amd64.tar.gz | tar xz -C /tmp/
 RUN sudo install -o root -g root -m 0755 /tmp/linux-amd64/helm /usr/local/bin/helm
+RUN rm -r /tmp/linux-amd64
 
 # Kustomize
 RUN curl -sL https://github.com/kubernetes-sigs/kustomize/releases/download/kustomize%2Fv4.5.2/kustomize_v4.5.2_linux_amd64.tar.gz | tar xz -C /tmp/
 RUN sudo install -o root -g root -m 0755 /tmp/kustomize /usr/local/bin/kustomize
+RUN rm /tmp/kustomize
 
 # NodeJs
 ENV NVM_VERSION=$NVM_VERSION
