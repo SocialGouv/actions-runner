@@ -9,7 +9,7 @@ ARG NVM_VERSION=v0.39.1
 RUN curl -sL https://go.dev/dl/go1.18.linux-amd64.tar.gz > /tmp/go.tar.gz
 RUN sudo tar -C /usr/local -xzf /tmp/go.tar.gz
 RUN rm /tmp/go.tar.gz
-RUN export PATH=$PATH:/usr/local/go/bin
+ENV PATH="${PATH}:/usr/local/go/bin"
 
 # Kubectl
 RUN curl -sL https://dl.k8s.io/release/v1.23.4/bin/linux/amd64/kubectl > /tmp/kubectl
