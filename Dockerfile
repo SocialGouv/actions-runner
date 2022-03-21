@@ -6,7 +6,7 @@ ARG NVM_VERSION=v0.39.1
 ### INSTALL DEPENDENCIES ###
 
 # Go
-RUN curl -sL https://go.dev/dl/go1.18.linux-amd64.tar.gz > /tmp/go.tar.gz
+RUN curl -sL https://go.dev/dl/go1.17.linux-amd64.tar.gz > /tmp/go.tar.gz
 RUN sudo tar -C /usr/local -xzf /tmp/go.tar.gz
 RUN rm /tmp/go.tar.gz
 ENV PATH="${PATH}:/usr/local/go/bin"
