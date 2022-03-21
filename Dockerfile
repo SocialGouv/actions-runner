@@ -35,7 +35,8 @@ RUN . $NVM_DIR/nvm.sh && \
     nvm install $NODE_VERSION && \
     nvm alias default $NODE_VERSION && \
     nvm use default && \
-    npm i -g yarn
+    npm i -g yarn && \
+    npm i -g node-gyp
 ENV NODE_PATH $NVM_DIR/$NODE_VERSION/lib/node_modules
 ENV PATH      $NVM_DIR/$NODE_VERSION/bin:$PATH
 
