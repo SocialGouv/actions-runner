@@ -4,6 +4,8 @@ ARG NODE_VERSION=v16
 ARG NVM_VERSION=v0.39.1
 
 ### INSTALL DEPENDENCIES ###
+RUN sudo apt update
+
 # Kubectl
 RUN curl -sL https://dl.k8s.io/release/v1.23.4/bin/linux/amd64/kubectl > /tmp/kubectl
 RUN sudo install -o root -g root -m 0755 /tmp/kubectl /usr/local/bin/kubectl
@@ -23,6 +25,9 @@ RUN rm -r /tmp/linux-amd64
 RUN curl -sL https://github.com/kubernetes-sigs/kustomize/releases/download/kustomize%2Fv4.5.2/kustomize_v4.5.2_linux_amd64.tar.gz | tar xz -C /tmp/
 RUN sudo install -o root -g root -m 0755 /tmp/kustomize /usr/local/bin/kustomize
 RUN rm /tmp/kustomize
+
+# Chromium
+RUN sudo apt install -y chromium-browser
 
 # NodeJs
 ENV NVM_VERSION=$NVM_VERSION
