@@ -1,0 +1,39 @@
+apiVersion: actions.summerwind.dev/v1alpha1
+kind: RunnerDeployment
+metadata:
+  name: default-runner-deployment
+  namespace: actions-runner-system
+spec:
+  template:
+    spec:
+      resources:
+          limits:
+            cpu: "1.0"
+            memory: "4Gi"
+          # This will decide when the cluster will be node-upscaled
+          requests:
+            cpu: "0.5"
+            memory: "2Gi"
+      imagePullPolicy: Always
+      dockerdWithinRunnerContainer: true
+      organization: SocialGouv
+
+      # Very important, see README.md
+      dockerMTU: 1480
+---
+apiVersion: actions.summerwind.dev/v1alpha1
+kind: HorizontalRunnerAutoscaler
+metadata:
+  name: default-runner-deployment-autoscaler
+  namespace: actions-runner-system
+spec:
+  scaleTargetRef:
+    name: default-runner-deployment
+  minReplicas: 4
+  # This will decide when the cluster will be node-upscaled
+  maxReplicas: 28
+
+  # Each time a job is created, a runner pod is spawned
+  scaleUpTriggers:
+  - githubEvent: {}
+    duration: "1h"

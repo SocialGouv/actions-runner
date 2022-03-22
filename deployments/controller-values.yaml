@@ -1,0 +1,20 @@
+authSecret:
+  # Secret will be passed in command line instead of here
+  create: true
+
+image:
+  actionsRunnerRepositoryAndTag: ghcr.io/socialgouv/actions-runner:master
+  
+githubWebhookServer:
+  enabled: true
+  secret:
+    # Secret will be passed in command line instead of here
+    enabled: true
+    create: true
+  ingress:
+    enabled: true
+    hosts:
+      # Host domain will be passed in command line instead of here
+      - paths:
+          - pathType: Prefix
+            path: "/"
