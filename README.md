@@ -2,7 +2,7 @@
 
 Ephemeral Github runners on k8s
 
-# Deployment with Helm
+## Deployment with `helm` and `kubectl`
 
 We'll deploy the controller with the following commands:
 
@@ -22,7 +22,7 @@ Once both pods are running (one **controller** and one **Github webhook server**
 kubectl --context gh-runners apply -f deployments/runner-deployment.yaml
 ```
 
-## The `dockerMTU` field
+### The `dockerMTU` field
 
 See [this blog article](https://mlohr.com/docker-mtu/) and [this issue](https://github.com/actions-runner-controller/actions-runner-controller/issues/651).
 
