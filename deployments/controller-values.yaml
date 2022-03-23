@@ -3,7 +3,7 @@ authSecret:
   create: true
 
 image:
-  actionsRunnerRepositoryAndTag: ghcr.io/actions-runner-controller/actions-runner-controller/actions-runner-dind:v2.289.1-ubuntu-20.04-4cbbcd6
+  actionsRunnerRepositoryAndTag: ghcr.io/socialgouv/actions-runner:master
   
 githubWebhookServer:
   enabled: true
