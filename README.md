@@ -2,6 +2,20 @@
 
 Run multiple self-hosted Github runners on a k8s cluster.
 
+## Cluster configuration
+
+### Ingress Controller
+
+You need a k8s cluster with an **Ingress Controller** installed.
+
+### `cert-manager`
+
+Install `cert-manager` with the following command:
+
+```bash
+kubectl apply -f https://github.com/cert-manager/cert-manager/releases/download/v1.7.1/cert-manager.yaml
+```
+
 ## Deployment with `helm` and `kubectl`
 
 We'll deploy the controller with the following commands:
@@ -10,6 +24,7 @@ We'll deploy the controller with the following commands:
 helm repo add actions-runner-controller https://actions-runner-controller.github.io/actions-runner-controller
 helm upgrade --install --namespace actions-runner-system --create-namespace \
   --wait actions-runner-controller actions-runner-controller/actions-runner-controller \
+  --version 0.17.0 \
   -f deployments/controller-values.yaml \
   --set "authSecret.github_token=<GITHUB_PAT>" \
   --set "githubWebhookServer.ingress.hosts[0].host=<CLUSTER_DOMAIN>" \
