@@ -1,6 +1,6 @@
-# Runner container for [Actions Runner Controller](https://github.com/actions-runner-controller/actions-runner-controller)
+# Runner container and infrastructure code for [Actions Runner Controller](https://github.com/actions-runner-controller/actions-runner-controller)
 
-Ephemeral Github runners on k8s
+Run multiple self-hosted Github runners on a k8s cluster.
 
 ## Deployment with `helm` and `kubectl`
 
