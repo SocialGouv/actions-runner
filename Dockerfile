@@ -37,12 +37,23 @@ RUN sudo sh -c 'echo "deb [arch=amd64] https://dl.google.com/linux/chrome/deb/ s
   && sudo apt update \
   && sudo apt install -y google-chrome-stable
 
-# Node.js v16
-RUN wget -qO- https://deb.nodesource.com/setup_16.x | sudo -E bash - \
-  && sudo apt install nodejs \
-  && mkdir ~/.npm-global \
-  && npm config set prefix '~/.npm-global'
-ENV PATH="~/.npm-global/bin:${PATH}"
+# NodeJs
+ENV NVM_VERSION=$NVM_VERSION
+ENV NVM_DIR=$HOME/.nvm
+RUN mkdir -p $NVM_DIR
+RUN curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/$NVM_VERSION/install.sh | bash
+ENV NODE_VERSION=$NODE_VERSION
+RUN chmod +x $NVM_DIR/nvm.sh && sudo ln -s $NVM_DIR/nvm.sh /usr/local/bin/nvm
+RUN . $NVM_DIR/nvm.sh && \
+    nvm install $NODE_VERSION && \
+    nvm alias default $NODE_VERSION && \
+    nvm use default && \
+    npm i -g yarn
+ENV NODE_PATH $NVM_DIR/$NODE_VERSION/lib/node_modules
+ENV PATH      $NVM_DIR/$NODE_VERSION/bin:$PATH
 
-# Yarn
-RUN npm install -g yarn
+COPY nvm-entrypoint.sh /
+RUN sudo chmod +x /nvm-entrypoint.sh
+ENTRYPOINT ["/nvm-entrypoint.sh"]
+
+CMD ["startup.sh"]
