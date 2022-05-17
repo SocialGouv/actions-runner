@@ -1,4 +1,4 @@
-FROM summerwind/actions-runner-dind:v2.289.1-ubuntu-20.04-4cbbcd6
+FROM summerwind/actions-runner-dind:v2.291.1-ubuntu-20.04
 
 ARG NODE_VERSION=v16
 ARG NVM_VERSION=v0.39.1
