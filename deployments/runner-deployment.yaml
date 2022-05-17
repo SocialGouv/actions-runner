@@ -9,11 +9,11 @@ spec:
       resources:
           limits:
             cpu: "1.0"
-            memory: "4Gi"
+            memory: "2Gi"
           # This will decide when the cluster will be node-upscaled
           requests:
             cpu: "0.5"
-            memory: "2Gi"
+            memory: "1Gi"
       imagePullPolicy: Always
       dockerdWithinRunnerContainer: true
       organization: SocialGouv
@@ -31,7 +31,7 @@ spec:
     name: default-runner-deployment
   minReplicas: 4
   # This will decide when the cluster will be node-upscaled
-  maxReplicas: 28
+  maxReplicas: 50
 
   # Each time a job is created, a runner pod is spawned
   scaleUpTriggers:
