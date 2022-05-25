@@ -1,8 +1,5 @@
 FROM summerwind/actions-runner-dind:v2.291.1-ubuntu-20.04
 
-ARG NODE_VERSION=v16
-ARG NVM_VERSION=v0.39.1
-
 ### INSTALL DEPENDENCIES ###
 
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
@@ -40,24 +37,11 @@ RUN sh -c 'echo "deb [arch=amd64] https://dl.google.com/linux/chrome/deb/ stable
     rm -rf /var/lib/apt/lists/*
 
 # NodeJs
-ENV NVM_VERSION=$NVM_VERSION
-ENV NVM_DIR=$HOME/.nvm
-RUN mkdir -p $NVM_DIR
-RUN curl -sL https://raw.githubusercontent.com/nvm-sh/nvm/$NVM_VERSION/install.sh | bash
-ENV NODE_VERSION=$NODE_VERSION
-RUN chmod +x $NVM_DIR/nvm.sh && ln -s $NVM_DIR/nvm.sh /usr/local/bin/nvm
-RUN . $NVM_DIR/nvm.sh && \
-    nvm install $NODE_VERSION && \
-    nvm alias default $NODE_VERSION && \
-    nvm use default && \
-    npm i -g yarn
-ENV NODE_PATH $NVM_DIR/$NODE_VERSION/lib/node_modules
-ENV PATH      $NVM_DIR/$NODE_VERSION/bin:$PATH
+RUN curl -sL https://nodejs.org/dist/v16.15.0/node-v16.15.0-linux-x64.tar.xz | \
+    tar -C /usr/local/lib -Jxf -
+ENV PATH="${PATH}:/usr/local/lib/node-v16.15.0-linux-x64/bin"
 
-COPY nvm-entrypoint.sh /
-RUN chmod +x /nvm-entrypoint.sh
-ENTRYPOINT ["/nvm-entrypoint.sh"]
+# Yarn
+RUN npm i -g yarn
 
 USER runner
-
-CMD ["startup.sh"]
