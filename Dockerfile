@@ -1,6 +1,6 @@
 FROM summerwind/actions-runner-dind:v2.291.1-ubuntu-20.04
 
-### INSTALL DEPENDENCIES ###
+# INSTALL DEPENDENCIES
 
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 USER root
@@ -43,5 +43,8 @@ ENV PATH="${PATH}:/usr/local/lib/node-v16.15.0-linux-x64/bin"
 
 # Yarn
 RUN npm i -g yarn
+
+# Set env for all users
+RUN sed -i 's@PATH=.*@PATH='"${PATH}"'@g' /etc/environment
 
 USER runner
