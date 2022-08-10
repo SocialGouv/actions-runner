@@ -1,4 +1,4 @@
-FROM summerwind/actions-runner-dind:v2.293.0-ubuntu-20.04
+FROM summerwind/actions-runner-dind:v2.294.0-ubuntu-20.04
 
 # INSTALL DEPENDENCIES
 
