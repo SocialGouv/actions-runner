@@ -2,8 +2,6 @@ FROM summerwind/actions-runner-dind:v2.294.0-ubuntu-20.04
 
 # INSTALL DEPENDENCIES
 
-# FAKE
-
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 USER root
 
