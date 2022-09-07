@@ -2,6 +2,7 @@ FROM summerwind/actions-runner-dind:v2.296.1-ubuntu-20.04
 
 # INSTALL DEPENDENCIES
 
+
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 USER root
 
