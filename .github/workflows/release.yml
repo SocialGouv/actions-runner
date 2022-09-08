@@ -12,13 +12,14 @@ jobs:
         uses: actions/checkout@v3
         with:
           fetch-depth: 0
+          persist-credentials: false
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
           node-version: "lts/*"
       - name: Install additional semantic-release plugins
         run: |
-          yarn add -D @semantic-release/git @semantic-release/changelog
+          yarn add -D semantic-release @semantic-release/git @semantic-release/changelog
       - name: Release
         env:
           GITHUB_TOKEN: ${{ secrets.PAT }}
