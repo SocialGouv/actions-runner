@@ -1,3 +1,15 @@
+## [1.1.7](https://github.com/SocialGouv/actions-runner/compare/v1.1.6...v1.1.7) (2022-09-14)
+
+
+### Bug Fixes
+
+* no-ci ([#34](https://github.com/SocialGouv/actions-runner/issues/34)) ([bd7b4ab](https://github.com/SocialGouv/actions-runner/commit/bd7b4ab83cf14ce11ff577bf478eb7b18cdb979a))
+* release on merge ([cb6f0ef](https://github.com/SocialGouv/actions-runner/commit/cb6f0ef3f1959ba9b31391ab2b25b6515377cb30))
+* test ([#31](https://github.com/SocialGouv/actions-runner/issues/31)) ([44d4d42](https://github.com/SocialGouv/actions-runner/commit/44d4d4296dea2a9db498992e1be54c4604d648c6))
+* test ([#32](https://github.com/SocialGouv/actions-runner/issues/32)) ([80c4871](https://github.com/SocialGouv/actions-runner/commit/80c4871eb280993b8a14039777dd034031c1baf4))
+* test ([#33](https://github.com/SocialGouv/actions-runner/issues/33)) ([70696a9](https://github.com/SocialGouv/actions-runner/commit/70696a918547d1f583d52a16940c48cbcba69adc))
+* without explicit token ([47a4d38](https://github.com/SocialGouv/actions-runner/commit/47a4d385318bd04025747fcd4b4f1e5453c9646c))
+
 ## [1.1.6](https://github.com/SocialGouv/actions-runner/compare/v1.1.5...v1.1.6) (2022-09-14)
 
 
