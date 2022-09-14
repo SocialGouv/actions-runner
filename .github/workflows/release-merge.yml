@@ -1,6 +1,6 @@
 name: Release
 on:
-  pull_request_target:
+  pull_request:
     types:
       - closed
     branches:
@@ -27,4 +27,4 @@ jobs:
       - name: Release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: npx semantic-release --no-ci --branches '.*'
+        run: npx semantic-release --no-ci
