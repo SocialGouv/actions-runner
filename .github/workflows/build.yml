@@ -1,6 +1,11 @@
 name: Build
 
-on: push
+on:
+  push:
+    tags:
+      - v*
+    branches-ignore:
+      - "master"
 
 jobs:
   register-app:
