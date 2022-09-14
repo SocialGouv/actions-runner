@@ -5,7 +5,6 @@ FROM summerwind/actions-runner-dind:v2.296.1-ubuntu-20.04
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 USER root
 
-
 # Go
 RUN curl -sL https://go.dev/dl/go1.17.linux-amd64.tar.gz | \
     tar -C /usr/local -xzf -
