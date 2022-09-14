@@ -9,6 +9,7 @@ on:
 jobs:
   release:
     name: Release
+    # the closed PR trigger is not necessarily a merge
     if: github.event.pull_request.merged == true
     runs-on: ubuntu-latest
     steps:
@@ -27,4 +28,5 @@ jobs:
       - name: Release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        # semantic-release won't run on PRs without the --no-ci flag
         run: npx semantic-release --no-ci
