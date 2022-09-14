@@ -1,3 +1,10 @@
+## [1.1.8-beta.1](https://github.com/SocialGouv/actions-runner/compare/v1.1.7...v1.1.8-beta.1) (2022-09-14)
+
+
+### Bug Fixes
+
+* Update Dockerfile ([#36](https://github.com/SocialGouv/actions-runner/issues/36)) ([719f08e](https://github.com/SocialGouv/actions-runner/commit/719f08e4258b3fa125f875943f4b5f670f7430d8))
+
 ## [1.1.7](https://github.com/SocialGouv/actions-runner/compare/v1.1.6...v1.1.7) (2022-09-14)
 
 
