@@ -1,3 +1,14 @@
+## [1.1.8](https://github.com/SocialGouv/actions-runner/compare/v1.1.7...v1.1.8) (2022-09-14)
+
+
+### Bug Fixes
+
+* master filter ([#38](https://github.com/SocialGouv/actions-runner/issues/38)) ([b03ea1d](https://github.com/SocialGouv/actions-runner/commit/b03ea1d7e706200c6f89d80f072aa25009224c4a))
+* test ([#39](https://github.com/SocialGouv/actions-runner/issues/39)) ([d93e73d](https://github.com/SocialGouv/actions-runner/commit/d93e73d004f25e5ff255feb9330ce80f651cc0e6))
+* test ([#40](https://github.com/SocialGouv/actions-runner/issues/40)) ([e7f522c](https://github.com/SocialGouv/actions-runner/commit/e7f522ce7a32719e3df6dd103d0e2365f2202150))
+* test ([#41](https://github.com/SocialGouv/actions-runner/issues/41)) ([3ef37ea](https://github.com/SocialGouv/actions-runner/commit/3ef37eaa1a97fb4d8508d4a239b21fe572ea6e46))
+* test ([#42](https://github.com/SocialGouv/actions-runner/issues/42)) ([9c33720](https://github.com/SocialGouv/actions-runner/commit/9c33720d3acf09c050cd56978bd72b03f2a0ab6b))
+
 ## [1.1.7](https://github.com/SocialGouv/actions-runner/compare/v1.1.6...v1.1.7) (2022-09-14)
 
 
