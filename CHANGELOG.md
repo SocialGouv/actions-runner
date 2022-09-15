@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/SocialGouv/actions-runner/compare/v1.0.3...v1.1.0) (2022-09-15)
+
+
+### Features
+
+* **deps:** update summerwind/actions-runner-dind docker tag to v2.296.2 ([#30](https://github.com/SocialGouv/actions-runner/issues/30)) ([c227c5f](https://github.com/SocialGouv/actions-runner/commit/c227c5fe57b47d4abb6666ea39ae1757b29f1429))
+
 ## [1.0.3](https://github.com/SocialGouv/actions-runner/compare/v1.0.2...v1.0.3) (2022-09-15)
 
 
