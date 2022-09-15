@@ -1,3 +1,10 @@
+# [1.2.0](https://github.com/SocialGouv/actions-runner/compare/v1.1.0...v1.2.0) (2022-09-15)
+
+
+### Features
+
+* comment ([#50](https://github.com/SocialGouv/actions-runner/issues/50)) ([825284e](https://github.com/SocialGouv/actions-runner/commit/825284e6124dea493546cbe5fc16840b4782926d))
+
 # [1.1.0](https://github.com/SocialGouv/actions-runner/compare/v1.0.3...v1.1.0) (2022-09-15)
 
 
