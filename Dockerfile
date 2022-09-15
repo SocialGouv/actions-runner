@@ -42,9 +42,8 @@ RUN curl -sL https://nodejs.org/dist/v16.15.0/node-v16.15.0-linux-x64.tar.xz | \
 ENV PATH="${PATH}:/usr/local/lib/node-v16.15.0-linux-x64/bin"
 
 # Yarn
-RUN npm i -g yarn
-
-# Set env for all users
-RUN sed -i 's@PATH=.*@PATH='"${PATH}"'@g' /etc/environment
+RUN npm i -g yarn && \
+    # Set env for all users
+    sed -i 's@PATH=.*@PATH='"${PATH}"'@g' /etc/environment
 
 USER runner
