@@ -1,25 +1,33 @@
 name: Release
 on:
-  push:
+  pull_request:
+    types:
+      - closed
     branches:
       - master
+  workflow_dispatch:
+
 jobs:
   release:
     name: Release
+    # the closed PR trigger is not necessarily a merge
+    if: github.event.pull_request.merged == true || github.event_name == 'workflow_dispatch'
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v3
         with:
           fetch-depth: 0
+          ssh-key: ${{ secrets.DEPLOY_KEY }}
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
           node-version: "lts/*"
       - name: Install additional semantic-release plugins
         run: |
-          yarn add -D @semantic-release/git
+          npm i semantic-release @semantic-release/git @semantic-release/changelog
       - name: Release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: npx semantic-release --plugins @semantic-release/commit-analyzer,@semantic-release/release-notes-generator,@semantic-release/github
+        # semantic-release won't run on PRs without the --no-ci flag
+        run: npx semantic-release --no-ci
