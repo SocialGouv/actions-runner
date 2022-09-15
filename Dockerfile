@@ -1,9 +1,10 @@
 FROM summerwind/actions-runner-dind:v2.296.2-ubuntu-20.04
 
-# INSTALL DEPENDENCIES
 
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 USER root
+
+### INSTALL DEPENDENCIES
 
 # Go
 RUN curl -sL https://go.dev/dl/go1.17.linux-amd64.tar.gz | \
