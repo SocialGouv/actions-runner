@@ -5,6 +5,9 @@ on:
       - closed
     branches:
       - master
+  workflow_dispatch:
+    branches:
+      - master
 
 jobs:
   release:
