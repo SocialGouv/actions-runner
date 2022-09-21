@@ -1,3 +1,10 @@
+## [1.2.1](https://github.com/SocialGouv/actions-runner/compare/v1.2.0...v1.2.1) (2022-09-21)
+
+
+### Bug Fixes
+
+* remove empty line ([3827866](https://github.com/SocialGouv/actions-runner/commit/3827866ab223af257d8f2f0fe5c7b17fae86fef1))
+
 # [1.2.0](https://github.com/SocialGouv/actions-runner/compare/v1.1.0...v1.2.0) (2022-09-15)
 
 
