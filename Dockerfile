@@ -1,6 +1,5 @@
 FROM summerwind/actions-runner-dind:v2.296.2-ubuntu-20.04
 
-
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 USER root
 
