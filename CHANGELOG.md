@@ -1,3 +1,10 @@
+## [1.2.4](https://github.com/SocialGouv/actions-runner/compare/v1.2.3...v1.2.4) (2023-09-25)
+
+
+### Bug Fixes
+
+* upgrade to rootless image ([31dc07b](https://github.com/SocialGouv/actions-runner/commit/31dc07b410cc607c91203573ed16a136bced3c50))
+
 ## [1.2.3](https://github.com/SocialGouv/actions-runner/compare/v1.2.2...v1.2.3) (2022-11-15)
 
 
