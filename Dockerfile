@@ -1,7 +1,7 @@
 FROM summerwind/actions-runner-dind-rootless:v2.309.0-ubuntu-20.04
 
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
-USER root
+USER 0
 
 ### INSTALL DEPENDENCIES
 
@@ -46,4 +46,4 @@ RUN npm i -g yarn && \
     # Set env for all users
     sed -i 's@PATH=.*@PATH='"${PATH}"'@g' /etc/environment
 
-USER runner
+USER 1000
