@@ -6,7 +6,7 @@ USER 0
 ### INSTALL DEPENDENCIES
 
 # Go
-RUN curl -sL https://go.dev/dl/go1.21.linux-amd64.tar.gz | \
+RUN curl -sL https://go.dev/dl/go1.21.1.linux-amd64.tar.gz | \
     tar -C /usr/local -xzf -
 ENV PATH="${PATH}:/usr/local/go/bin"
 
