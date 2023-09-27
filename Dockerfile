@@ -1,4 +1,4 @@
-FROM summerwind/actions-runner-dind-rootless:v2.309.0-ubuntu-20.04
+FROM summerwind/actions-runner-dind:v2.309.0-ubuntu-20.04
 
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 USER 0
