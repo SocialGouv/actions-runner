@@ -41,9 +41,11 @@ RUN curl -sL https://nodejs.org/dist/v18.18.0/node-v18.18.0-linux-x64.tar.xz | \
     tar -C /usr/local/lib -Jxf -
 ENV PATH="${PATH}:/usr/local/lib/node-v18.18.0-linux-x64/bin"
 
-# Yarn
-RUN npm i -g yarn && \
-    # Set env for all users
-    sed -i 's@PATH=.*@PATH='"${PATH}"'@g' /etc/environment
+# Set environment for all users
+# PATH variable has been extended where necessary previously in this file
+RUN sed -i 's@PATH=.*@PATH='"${PATH}"'@g' /etc/environment
 
 USER 1000
+
+# Yarn
+RUN npm i -g yarn
