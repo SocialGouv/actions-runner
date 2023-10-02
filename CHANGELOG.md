@@ -1,3 +1,10 @@
+## [1.2.5](https://github.com/SocialGouv/actions-runner/compare/v1.2.4...v1.2.5) (2023-10-02)
+
+
+### Bug Fixes
+
+* upgrade runner base image ([#56](https://github.com/SocialGouv/actions-runner/issues/56)) ([d4b736a](https://github.com/SocialGouv/actions-runner/commit/d4b736a3106953a1f7ba1ef9c03e3f0288b81bd2))
+
 ## [1.2.4](https://github.com/SocialGouv/actions-runner/compare/v1.2.3...v1.2.4) (2023-09-25)
 
 
