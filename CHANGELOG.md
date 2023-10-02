@@ -1,3 +1,10 @@
+## [1.2.6](https://github.com/SocialGouv/actions-runner/compare/v1.2.5...v1.2.6) (2023-10-02)
+
+
+### Bug Fixes
+
+* npm belongs to user 1000 ([35229cd](https://github.com/SocialGouv/actions-runner/commit/35229cd31bb0dc2af0d473396f3ff8a3dd4225f8))
+
 ## [1.2.5](https://github.com/SocialGouv/actions-runner/compare/v1.2.4...v1.2.5) (2023-10-02)
 
 
