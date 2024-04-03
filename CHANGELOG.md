@@ -1,3 +1,10 @@
+## [1.2.7](https://github.com/SocialGouv/actions-runner/compare/v1.2.6...v1.2.7) (2024-04-03)
+
+
+### Bug Fixes
+
+* bump ([3f0f96f](https://github.com/SocialGouv/actions-runner/commit/3f0f96f3c8975d5c57af1ca364aa1e022c60b63d))
+
 ## [1.2.6](https://github.com/SocialGouv/actions-runner/compare/v1.2.5...v1.2.6) (2023-10-02)
 
 
