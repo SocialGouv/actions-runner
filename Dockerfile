@@ -5,7 +5,8 @@ USER 0
 
 ### INSTALL DEPENDENCIES
 
-RUN apt-get update && apt-get install -y --no-install-recommends curl gnupg2 xz-utils && rm -rf /var/lib/apt/lists/*
+RUN apt-get update && apt-get install -y --no-install-recommends curl gnupg2 xz-utils unzip jq \
+  && rm -rf /var/lib/apt/lists/*
 
 # Go
 RUN curl -sL https://go.dev/dl/go1.21.1.linux-amd64.tar.gz | \
