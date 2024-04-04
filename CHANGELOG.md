@@ -1,3 +1,10 @@
+## [1.2.9](https://github.com/SocialGouv/actions-runner/compare/v1.2.8...v1.2.9) (2024-04-04)
+
+
+### Bug Fixes
+
+* git dep ([1e054b7](https://github.com/SocialGouv/actions-runner/commit/1e054b7d4dff6b01b8797a4bc1589fda401bcc05))
+
 ## [1.2.8](https://github.com/SocialGouv/actions-runner/compare/v1.2.7...v1.2.8) (2024-04-04)
 
 
