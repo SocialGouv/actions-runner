@@ -5,7 +5,7 @@ USER 0
 
 ### INSTALL DEPENDENCIES
 
-RUN apt-get update && apt-get install -y --no-install-recommends curl gnupg2 xz-utils unzip jq git \
+RUN apt-get update && apt-get install -y --no-install-recommends curl gnupg2 xz-utils unzip jq git rsync \
   && rm -rf /var/lib/apt/lists/*
 
 # Go
