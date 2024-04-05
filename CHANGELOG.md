@@ -1,3 +1,10 @@
+## [1.2.10](https://github.com/SocialGouv/actions-runner/compare/v1.2.9...v1.2.10) (2024-04-05)
+
+
+### Bug Fixes
+
+* install rsync ([5065222](https://github.com/SocialGouv/actions-runner/commit/5065222f23efa9dc0e0a7c5c3dff6e6878bf8f85))
+
 ## [1.2.9](https://github.com/SocialGouv/actions-runner/compare/v1.2.8...v1.2.9) (2024-04-04)
 
 
