@@ -1,4 +1,4 @@
-FROM ghcr.io/actions/actions-runner:2.317.0
+FROM ghcr.io/actions/actions-runner:2.319.1
 
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 USER 0
